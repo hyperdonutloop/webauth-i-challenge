@@ -1,4 +1,4 @@
-const db = require('../database/dbConfig.js');
+const db = require('../data/dbConfig.js');
 
 module.exports = {
   add,
@@ -8,7 +8,7 @@ module.exports = {
 };
 
 function find() {
-  return db ('users').select('id', 'username');
+  return db('users').select('id', 'username');
 }
 
 function findBy(filter) {
@@ -19,7 +19,7 @@ function findBy(filter) {
 
 function add(user) {
   return db('users')
-    .insert( user, 'id')
+    .insert(user, 'id')
     .then(ids => {
       const [id] =ids;
       return findById(id);

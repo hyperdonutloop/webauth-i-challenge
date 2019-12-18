@@ -30,7 +30,7 @@ const sessionConfiguration = {
 
 configureMiddleware(server);
 
-server.use(sessions (sessionConfiguration)); // adds a req.session object
+server.use(sessions(sessionConfiguration)); // adds a req.session object
 
 server.use('/api', apiRouter);
 
